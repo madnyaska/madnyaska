@@ -18,55 +18,80 @@
 </header>
 
 <main class="site__main">
-  <!-- Hero -->
-  <section class="hero">
-    <h1 class="hero__title">Личная страница</h1>
-    <p class="hero__lead">Короткий подзаголовок. Пара строк о себе — можно позже заменить.</p>
-  </section>
+  <section class="project" id="forum">
+  <h2 class="sect__title">Форум «Shinobi Legacy»</h2>
 
-  <!-- Последние работы (карточки ведут на секции в works.html) -->
-  <section class="cards">
-    <h2 class="sect__title">Последние работы</h2>
+  <div class="slider slider--4">
+    <!-- переключатели -->
+    <input type="radio" name="forum" id="forum-1" checked>
+    <input type="radio" name="forum" id="forum-2">
+    <input type="radio" name="forum" id="forum-3">
+    <input type="radio" name="forum" id="forum-4">
 
-    <div class="grid">
-      <!-- Пример 1: Форум -->
-      <article class="card">
-        <a class="card__link" href="works.html#forum">
-          <img class="card__img" src="images/shinobilegacy.f-rpg.me.png" alt="Форум Shinobi Legacy" loading="lazy">
-          <div class="card__meta">
-            <span class="badge">Форум</span>
-            <h3 class="card__title">Тематика: Наруто</h3>
-          </div>
+    <!-- лента слайдов -->
+    <div class="slider__track">
+      <!-- 1: обложка -->
+      <figure class="slide">
+        <a href="images/shinobilegacy.f-rpg.me.png" target="_blank" rel="noopener">
+          <img src="images/shinobilegacy.f-rpg.me.png" alt="Обложка форума" loading="lazy">
         </a>
-      </article>
+        <figcaption>Обложка: форум по вселенной Наруто</figcaption>
+      </figure>
 
-      <!-- Пример 2: Арт/скетч -->
-      <article class="card">
-        <a class="card__link" href="works.html#sketch01">
-          <img class="card__img" src="images/art2.jpg" alt="Скетч 01" loading="lazy">
-          <div class="card__meta">
-            <span class="badge badge--alt">скетч</span>
-            <h3 class="card__title">Скетч 01</h3>
-          </div>
+      <!-- 2: всплывающее окно карточки персонажа -->
+      <figure class="slide">
+        <a href="images/карточка персонажа.JPG" target="_blank" rel="noopener">
+          <img src="images/карточка персонажа.JPG" alt="Карточка персонажа — всплывающее окно" loading="lazy">
         </a>
-      </article>
+        <figcaption>Карточка персонажа: статы, награды, всплывающее окно</figcaption>
+      </figure>
 
-      <!-- Пример 3: Иллюстрация -->
-      <article class="card">
-        <a class="card__link" href="works.html#illu01">
-          <img class="card__img" src="images/art3.jpg" alt="Иллюстрация 01" loading="lazy">
-          <div class="card__meta">
-            <span class="badge">иллюстрация</span>
-            <h3 class="card__title">Иллюстрация 01</h3>
-          </div>
+      <!-- 3: полная карточка / личное дело -->
+      <figure class="slide">
+        <a href="images/личное дело персонажа.png" target="_blank" rel="noopener">
+          <img src="images/личное дело персонажа.png" alt="Личное дело персонажа (полная карточка)" loading="lazy">
         </a>
-      </article>
+        <figcaption>Полная карточка: личное дело персонажа</figcaption>
+      </figure>
+
+      <!-- 4: магазин -->
+      <figure class="slide">
+        <a href="images/магазин.JPG" target="_blank" rel="noopener">
+          <img src="images/магазин.JPG" alt="Магазин оружия и предметов для ниндзя" loading="lazy">
+        </a>
+        <figcaption>Магазин: оружие и предметы для ниндзя</figcaption>
+      </figure>
     </div>
 
-    <div class="more">
-      <a class="btn" href="works.html">Смотреть всё</a>
+    <!-- точки -->
+    <div class="slider__dots">
+      <label for="forum-1"></label>
+      <label for="forum-2"></label>
+      <label for="forum-3"></label>
+      <label for="forum-4"></label>
     </div>
-  </section>
+
+    <!-- стрелки -->
+    <div class="slider__arrows">
+      <label class="prev" for="forum-4"></label>
+      <label class="next" for="forum-2"></label>
+
+      <label class="prev" for="forum-1"></label>
+      <label class="next" for="forum-3"></label>
+
+      <label class="prev" for="forum-2"></label>
+      <label class="next" for="forum-4"></label>
+
+      <label class="prev" for="forum-3"></label>
+      <label class="next" for="forum-1"></label>
+    </div>
+  </div>
+
+  <details class="project__desc" open>
+    <summary>Описание проекта</summary>
+    <p>Форумный проект «Shinobi Legacy»: тёмная тема, переменные оформления (—amscolor и др.), карточки ролей со статами и наградами, всплывающие окна, магазин предметов и оружия, адаптив 480–900px.</p>
+  </details>
+</section>
 </main>
 
 <footer class="site__foot" id="contacts">
