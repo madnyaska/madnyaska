@@ -3,10 +3,75 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>madnyaska</title>
+  <title>madnyaska — главная</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <!-- Шрифт Russo One (опционально). Если не нужен — удали строку. -->
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 </head>
-<body style="font-family:sans-serif;text-align:center;padding-top:100px">
-  <h1>Привет 👋</h1>
-  <p>Если ты видишь эту страницу — GitHub Pages заработал!</p>
+<body class="site">
+<header class="site__head">
+  <a class="brand" href="./">
+    <!-- если нет logo.svg, оставь просто <span class="brand__text">MADNYASKA</span> -->
+    <span class="brand__text">MADNYASKA</span>
+  </a>
+
+  <nav class="nav">
+    <!-- добавишь свои ссылки -->
+    <a class="nav__link is-active" href="./">Главная</a>
+    <a class="nav__link" href="works.html">Галерея</a>
+    <a class="nav__link" href="#contacts">Контакты</a>
+  </nav>
+</header>
+
+<main class="site__main">
+  <section class="hero">
+    <h1 class="hero__title">Личная страница</h1>
+    <p class="hero__lead">Короткий подзаголовок. Здесь можно написать о себе одну-две строки.</p>
+  </section>
+
+  <section class="cards">
+    <h2 class="sect__title">Последние работы</h2>
+    <div class="grid">
+      <!-- Заменяй src на свои файлы в /images -->
+      <article class="card">
+        <a class="card__link" href="images/art1.jpg" target="_blank" rel="noopener">
+          <img class="card__img" src="images/art1.jpg" alt="Работа 1">
+          <div class="card__meta">
+            <span class="badge">арт</span>
+            <h3 class="card__title">Название работы</h3>
+          </div>
+        </a>
+      </article>
+
+      <article class="card">
+        <a class="card__link" href="images/art2.jpg" target="_blank" rel="noopener">
+          <img class="card__img" src="images/art2.jpg" alt="Работа 2">
+          <div class="card__meta">
+            <span class="badge badge--alt">скетч</span>
+            <h3 class="card__title">Название работы</h3>
+          </div>
+        </a>
+      </article>
+
+      <article class="card">
+        <a class="card__link" href="images/art3.jpg" target="_blank" rel="noopener">
+          <img class="card__img" src="images/art3.jpg" alt="Работа 3">
+          <div class="card__meta">
+            <span class="badge">иллюстрация</span>
+            <h3 class="card__title">Название работы</h3>
+          </div>
+        </a>
+      </article>
+    </div>
+
+    <div class="more">
+      <a class="btn" href="works.html">Смотреть всё</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site__foot" id="contacts">
+  <p>© madnyaska • Сделано на GitHub Pages</p>
+</footer>
 </body>
 </html>
