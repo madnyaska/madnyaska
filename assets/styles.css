@@ -165,3 +165,18 @@ html{scroll-behavior:smooth}
 #forum{scroll-margin-top:80px}
 
 @media (max-width:700px){ .slide img{height:260px} }
+
+/* Слайдер на 4 кадра */
+.slider--4 .slider__track{ width:400% }
+#forum-1:checked ~ .slider__track{ transform:translateX(0%) }
+#forum-2:checked ~ .slider__track{ transform:translateX(-100%) }
+#forum-3:checked ~ .slider__track{ transform:translateX(-200%) }
+#forum-4:checked ~ .slider__track{ transform:translateX(-300%) }
+
+#forum-1:checked ~ .slider__dots label:nth-child(1),
+#forum-2:checked ~ .slider__dots label:nth-child(2),
+#forum-3:checked ~ .slider__dots label:nth-child(3),
+#forum-4:checked ~ .slider__dots label:nth-child(4){
+  background:color-mix(in srgb, var(--amscolor) 70%, #000);
+}
+
