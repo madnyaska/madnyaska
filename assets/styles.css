@@ -112,3 +112,56 @@ body.site{
   .nav{gap:8px}
   .grid{grid-template-columns:repeat(2,1fr)}
 }
+
+
+/* --- Проекты --- */
+.project{margin:18px 0 28px}
+.project .sect__title{margin-top:6px}
+
+/* --- Слайдер без JS --- */
+.slider{position:relative;background:var(--surface);border:1px solid var(--bordercolor);
+  border-radius:12px;padding:12px;overflow:hidden}
+.slider input{display:none}
+.slider__track{display:flex;width:300%;transition:transform .35s ease}
+.slide{width:100%;padding:6px;text-align:center}
+.slide img{width:100%;height:380px;object-fit:cover;border-radius:10px;display:block}
+.slide figcaption{margin-top:8px;color:var(--textcolor);font-size:14px}
+
+/* переключение кадров */
+#forum-1:checked ~ .slider__track{transform:translateX(0%)}
+#forum-2:checked ~ .slider__track{transform:translateX(-100%)}
+#forum-3:checked ~ .slider__track{transform:translateX(-200%)}
+
+/* точки */
+.slider__dots{display:flex;gap:8px;justify-content:center;margin:10px 0 2px}
+.slider__dots label{width:9px;height:9px;border-radius:50%;border:1px solid var(--bordercolor);cursor:pointer}
+#forum-1:checked ~ .slider__dots label:nth-child(1),
+#forum-2:checked ~ .slider__dots label:nth-child(2),
+#forum-3:checked ~ .slider__dots label:nth-child(3){
+  background:color-mix(in srgb, var(--amscolor) 70%, #000);
+}
+
+/* стрелки */
+.slider__arrows{pointer-events:none}
+.slider__arrows label{pointer-events:auto;position:absolute;top:50%;transform:translateY(-50%);
+  width:36px;height:36px;border-radius:50%;border:1px solid var(--bordercolor);
+  background:var(--surface-2);opacity:.85;cursor:pointer}
+.slider__arrows .prev{left:10px}
+.slider__arrows .next{right:10px}
+.slider__arrows label::after{
+  content:"";display:block;width:8px;height:8px;border-right:2px solid var(--wordcolor);
+  border-top:2px solid var(--wordcolor);position:absolute;top:50%;left:50%;
+  transform:translate(-40%,-50%) rotate(225deg)}
+.slider__arrows .next::after{transform:translate(-60%,-50%) rotate(45deg)}
+
+/* описание */
+.project__desc{margin-top:10px;background:var(--surface);border:1px solid var(--bordercolor);
+  border-radius:10px;padding:10px 12px}
+.project__desc > summary{cursor:pointer;font:700 14px/1.2 var(--rus);
+  letter-spacing:.04em;text-transform:uppercase}
+
+/* плавный скролл и компенсация липкой шапки */
+html{scroll-behavior:smooth}
+#forum{scroll-margin-top:80px}
+
+@media (max-width:700px){ .slide img{height:260px} }
