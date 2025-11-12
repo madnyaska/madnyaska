@@ -180,22 +180,49 @@ body.site{
 }
 
 /* Стрелки (показываем только актуальную пару) */
-.slider__arrows{ pointer-events:none; z-index:2 }
+/* Стрелки – всегда показываем обе */
+.slider__track{ position:relative; z-index:1; }
+
+.slider__arrows{
+  position:relative;
+  pointer-events:none;
+  z-index:2;
+}
+
 .slider__arrows label{
-  display:none; pointer-events:auto;
-  position:absolute; top:50%; transform:translateY(-50%);
-  width:36px; height:36px; border-radius:50%;
-  border:1px solid var(--bordercolor); background:var(--surface-2);
-  opacity:.95; cursor:pointer
+  display:block;              /* ← ВСЕГДА видны */
+  pointer-events:auto;
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  border:1px solid var(--bordercolor);
+  background:var(--surface-2);
+  opacity:.95;
+  cursor:pointer;
 }
-.slider__arrows .prev{ left:10px }
-.slider__arrows .next{ right:10px }
+
+.slider__arrows .prev{ left:10px; }
+.slider__arrows .next{ right:10px; }
+
 .slider__arrows label::after{
-  content:""; display:block; width:8px; height:8px; position:absolute; top:50%; left:50%;
-  border-right:2px solid var(--wordcolor); border-top:2px solid var(--wordcolor);
-  transform:translate(-40%,-50%) rotate(225deg)
+  content:"";
+  display:block;
+  width:8px;
+  height:8px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  border-right:2px solid var(--wordcolor);
+  border-top:2px solid var(--wordcolor);
+  transform:translate(-40%,-50%) rotate(225deg);
 }
-.slider__arrows .next::after{ transform:translate(-60%,-50%) rotate(45deg) }
+.slider__arrows .next::after{
+  transform:translate(-60%,-50%) rotate(45deg);
+}
+
 
 /* Видимость конкретных стрелок для #forum */
 #forum-1:checked ~ .slider__arrows .prev[for="forum-4"],
